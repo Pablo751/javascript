@@ -32,46 +32,34 @@ function playerPlay() {
 }
 
 
-function RockPaperScissors(var1,var2) {  
-  let counterCPU = 0;
-  let counterP1 = 0;
-  let finalCount;
+function playRound(var1, var2) {  
+  let resultText = ""
   
-  if (var1 == "scissors" && var2== "paper") {
-    counterP1 =+ 1;
-    } else if (var1 == "scissors" && var2 != "paper") {
-    counterCPU =+ 1;
-      
-    } else if (var1 == "paper" && var2 == "rock") {
-    counterP1 =+ 1;
-    } else if (var1 == "paper" && var2 != "rock") {
-    counterCPU =+ 1;
+  if (playerSelection == "scissors" && computerSelection== "paper") {
+    resultText *= "You win! " + var1 + " beats " + var2;
+    } else if (playerSelection == "scissors" && computerSelection != "paper" || computerSelection != "scissors") {
+    resultText += "You loose! " + var1 + " doesn't beat " + var2;}
+    else if (playerSelection == computerSelection) {
+    resultText += "Draw, " + var1 + "is equal to " + var2;
+    
+    }else if (playerSelection == "paper" && computerSelection == "rock") {
+    resultText += "You win! " + var1 + " beats " + var2;
+    } else if (playerSelection == "paper" && computerSelection != "rock") {
+    resultText += "You loose! " + var1 + " doesn't beat " + var2;}
+    else if (playerSelection == computerSelection) {
+    resultText += "Draw, " + var1 + "is equal to " + var2;
 
-    } else if (var1 == "rock" && var2 == "scissors") {
-    counterP1 =+ 1;
-    } else if (var1 == "rock" && var2 != "scissors") {
-    counterCPU =+ 1;
-    } 
-  finalCount =  `The counter is player: ${counterP1} and CPU ${counterCPU}`;
-  return finalCount
+
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    resultText += "You win! " + var1 + " beats " + var2;
+    } else if (playerSelection == "rock" && computerSelection != "scissors") {
+    resultText += "You loose! " + var1 + " doesn't beat " + var2;
+    } else if (playerSelection == computerSelection) {
+    resultText += "Draw, " + var1 + "is equal to " + var2;
+    }
+ return resultText
  }
 
-function game() {
- let finalfinal =""; 
- for (let i = 0; i < 5; i++) {
-  function RockPaperScissors()
-  }
-return finalfinal
-               }
-
- 
-function prueba() {
- let finalfinal =""; 
- for (let i = 0; i < 6; i++) {
-  finalfinal += "The number is " + i + "<br>";
-  }
-return finalfinal
-               }
-}
-
-console.log(game())
+const playerSelection = "rock";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
