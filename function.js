@@ -32,34 +32,38 @@ function playerPlay() {
 }
 
 
-function playRound(var1, var2) {  
+function playRound(playerSelection, computerSelection) {  
   let resultText = ""
   
   if (playerSelection == "scissors" && computerSelection== "paper") {
-    resultText *= "You win! " + var1 + " beats " + var2;
-    } else if (playerSelection == "scissors" && computerSelection != "paper" || computerSelection != "scissors") {
-    resultText += "You loose! " + var1 + " doesn't beat " + var2;}
+    resultText *= "You win! " + playerSelection + " beats " + computerSelection;
+    } else if (playerSelection == "scissors" && computerSelection != "paper" && computerSelection != "scissors") {
+    resultText += "You loose! " + playerSelection + " doesn't beat " + computerSelection;}
     else if (playerSelection == computerSelection) {
-    resultText += "Draw, " + var1 + "is equal to " + var2;
+    resultText += "Draw, " + playerSelection + " is equal to " + computerSelection;}
+
     
-    }else if (playerSelection == "paper" && computerSelection == "rock") {
-    resultText += "You win! " + var1 + " beats " + var2;
-    } else if (playerSelection == "paper" && computerSelection != "rock") {
-    resultText += "You loose! " + var1 + " doesn't beat " + var2;}
+    else if (playerSelection == "paper" && computerSelection == "rock") {
+    resultText += "You win! " + playerSelection + " beats " + computerSelection;
+    } else if (playerSelection == "paper" && computerSelection != "rock" && computerSelection != "paper") {
+    resultText += "You loose! " + playerSelection + " doesn't beat " + computerSelection;}
     else if (playerSelection == computerSelection) {
-    resultText += "Draw, " + var1 + "is equal to " + var2;
+    resultText += "Draw, " + playerSelection + " is equal to " + computerSelection;
 
 
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    resultText += "You win! " + var1 + " beats " + var2;
-    } else if (playerSelection == "rock" && computerSelection != "scissors") {
-    resultText += "You loose! " + var1 + " doesn't beat " + var2;
+    resultText += "You win! " + playerSelection + " beats " + computerSelection;
+    } else if (playerSelection == "rock" && computerSelection != "scissors" && computerSelection != "rock") {
+    resultText += "You loose! " + playerSelection + " doesn't beat " + computerSelection;
     } else if (playerSelection == computerSelection) {
-    resultText += "Draw, " + var1 + "is equal to " + var2;
+    resultText += "Draw, " + playerSelection + " is equal to " + computerSelection;}
+    
+  else if (playerSelection == "wrong imput") {
+  resultText += "Wrong imput, please try again"
     }
  return resultText
  }
 
 const playerSelection = "rock";
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerPlay(), computerPlay()));
