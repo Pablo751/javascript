@@ -5,4 +5,5 @@
       ];
       
     let randomItem = optionsArray[Math.floor(Math.random()*optionsArray.length)];
+    console.log(randomItem)
     }
